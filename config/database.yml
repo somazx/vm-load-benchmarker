@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: vm_load_benchmarker_production
-  username: vm_load_benchmarker
+  database: vmloadbench
+  username: vmloadbench
   password: <%= ENV["VM_LOAD_BENCHMARKER_DATABASE_PASSWORD"] %>
