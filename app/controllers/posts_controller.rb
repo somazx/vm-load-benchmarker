@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action do
+    n = rand(0.3...0.6)
+    sleep(n)
+  end
 
   # GET /posts or /posts.json
   def index
@@ -8,6 +12,12 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    count = rand(1...10)
+    @posts = []
+
+    count.times do |n|
+      @posts << Post.find(id)
+    end
   end
 
   # GET /posts/new
